@@ -32,10 +32,12 @@ userList = list(csv.reader(userFile, delimiter=";"))
 allLogin = listeLogin(userList)
 
 # Bienvenue
-print("Bienvenue à la Roulette Magique !")
+print("Bienvenue à la Roulette Magique !") # Page de base
 choixConnexion = int(input("Voulez-vous vous Connecter(1) ou vous Enregistrer(2) : "))
-if choixConnexion == 1:
-    while Cursor == 0:
+
+if choixConnexion == 1: # Page de login
+
+    while Cursor == 0: # Login du pseudo
         login = input("Votre pseudo : ")
         if login in allLogin :
             Cursor = 1
@@ -43,7 +45,8 @@ if choixConnexion == 1:
             print("Pseudo inconnu !")
     Cursor = 0
     ligneUser = choixLigne(login)+1
-    while Cursor == 0:
+
+    while Cursor == 0: # Login Mot de passe
         password = input("Votre mot de passe : ")
         if password == userList[ligneUser][2]:
             Cursor = 1
@@ -51,29 +54,34 @@ if choixConnexion == 1:
             print("Mot de passe incorrect !")
     Cursor = 0
     print("Bienvenue ,", login, "!")
-elif choixConnexion == 2:
-    while Cursor == 0:
+
+elif choixConnexion == 2: # Page d'enregistrement
+
+    while Cursor == 0: # Nouveau Mail
         nouveauMail = input("Entrez votre eMail : ")
-        if "@" in nouveauMail and "." in nouveauMail :
+        if "@" in nouveauMail and "." in nouveauMail : # Vérification syntaxe eMail valide
             Cursor = 1
         else :
             print("Format eMail incorrect !")
     Cursor = 0
-    while Cursor == 0:
+
+    while Cursor == 0: # Nouveau Pseudo
         nouveauPseudo = input("Entrez un pseudo : ")
-        if nouveauPseudo in allLogin :
+        if nouveauPseudo in allLogin : # Vérification que le pseudo n'est pas déjà pris
             print("Pseudo déjà pris !")
         else :
             Cursor = 1
     Cursor = 0
-    while Cursor == 0:
+
+    while Cursor == 0: # Ajout du Mot de passe
         nouveauPass1 = input("Entrez un nouveau mot de passe (6 caractères minimum) : ")
-        if len(nouveauPass1) >=6 :
+        if len(nouveauPass1) >=6 : # Vérification de la longueur du mot de passe
             Cursor = 1
         else:
             print("Trop peu de caractères")
     Cursor = 0
-    while Cursor == 0:
+
+    while Cursor == 0: # Vérification du mot de passe une deuxième fois
         nouveauPass2 = input("Entrez à nouveau votre mot de passe : ")
         if nouveauPass2 == nouveauPass1:
             Cursor = 1
