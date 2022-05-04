@@ -1,0 +1,21 @@
+- Plateau :
+Utiliser la position XY des jetons pour mettre en surbrillance les cases qui vont être prise en compte par le jeu.
+
+- Jetons :
+Mettre des jetons de : 500, 200, 100, 50, 20, 10, 2, 1
+Afficher uniquement les jetons si le joueur a assez d'argent pour les poser.
+
+- Boutons :
+Lancer
+Les jetons
+Classement
+Quitter
+
+- Classement :
+Classement ratio jetons/parties ou points/parties ou juste points ?
+
+Les points
+Les jetons
+Le temps passé
+Le nombre de partie jouées 
+
